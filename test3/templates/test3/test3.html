@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+ <div class="container home">
+		<div class="row">
+			<div class="col-md-12 text-center">
+
+				<h1>Your Platform is {{ os }}</h1>
+				<p>Download your {{ extn }} file: <a href="{% static extn %}" class="btn btn-info">Download</a></p>
+
+				<p><a href="{% url 'index' %}" class="btn btn-secondary">Return to home</a></p>
+
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
