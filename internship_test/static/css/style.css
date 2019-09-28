@@ -8,3 +8,7 @@ body{
     min-height: 100vh;
     padding-top: 40vh;
 }
+
+input{
+    max-width: 400px;
+}

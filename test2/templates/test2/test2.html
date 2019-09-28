@@ -1,2 +1,31 @@
 {% extends 'base.html' %}
+{% block body %}
+	<div class="container home">
+		<div class="row">
+			<div class="col-md-12 text-center">
 
+				{% if uploaded_file_url %}
+					<p>File uploaded <a href="{{ uploaded_file_url }}">File.py</a></p>
+					<form method="post" action="{% url 'test2:output' %}">
+						{% csrf_token %}
+						<input type="hidden" name="file" value="{{ uploaded_file_url }}"/>
+						<button type="submit" class="btn btn-lg btn-info">Show output</button>
+					</form>
+				{% else %}
+					{% if error %}
+						<span class="text-danger">{{ error }}</span>
+					{% endif %}
+					<form method="post" enctype="multipart/form-data">
+						{% csrf_token %}
+						<input type="file" name="myfile">
+						<button type="submit" class="btn btn-lg btn-info">Upload</button>
+					</form>
+				{% endif %}
+				<br>
+
+				<p><a href="{% url 'index' %}" class="btn btn-secondary">Return to home</a></p>
+
+			</div>
+		</div>
+	</div>
+{% endblock %}

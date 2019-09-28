@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container text-center">
+	<h2 class="text-center"> Your output </h2>
+	<div class="row">
+		<div class="col-md-12 text-left bg-light">
+			<pre>
+<code>{{ content }}</code>
+			</pre>
+		</div>
+		<br>
+		<div class="col-md-6">
+		<a href="{% url 'test2:home' %}" class="btn btn-info btn-block">Return</a>
+		</div>
+	</div>
+</div>
+{% endblock %}
