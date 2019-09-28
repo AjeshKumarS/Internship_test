@@ -1,0 +1,10 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #bee5eb;
+}
+
+.home{
+    min-height: 100vh;
+    padding-top: 40vh;
+}
